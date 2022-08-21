@@ -20,6 +20,7 @@ public class DemoServlet extends HttpServlet {
 
         try (PrintWriter writer = resp.getWriter()) {
             writer.write("<h1>" + demoService.createHelloWorld() + "</h1>");
+            System.out.println("This line must be code smell!");
         }
     }
 }

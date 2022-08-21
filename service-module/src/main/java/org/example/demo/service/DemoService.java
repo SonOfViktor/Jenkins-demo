@@ -11,7 +11,13 @@ public class DemoService {
     public String createHelloWorld() {
         int year = RandomUtils.nextInt(22, 51);
 
-        return "Hello world from " + year;
+        return "Hello world from 20" + year + " year";
+    }
+
+    public String theSameNotUsedCreateHelloWorld() {
+        int year = RandomUtils.nextInt(22, 51);
+
+        return "Hello world from 20" + year + " year";
     }
 
     public static DemoService getInstance() {
