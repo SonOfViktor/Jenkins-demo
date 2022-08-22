@@ -20,6 +20,18 @@ public class DemoService {
         return "Hello world from 20" + year + " year";
     }
 
+    public String createHelloWorldWithParam(int number) {
+        int year;
+
+        if (number > 50) {
+            year = 22;
+        } else {
+            year = 20;
+        }
+
+        return "Hello world from 20" + year + " year";
+    }
+
     public static DemoService getInstance() {
         return INSTANCE;
     }

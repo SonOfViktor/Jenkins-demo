@@ -18,6 +18,9 @@ public class DemoServlet extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding(StandardCharsets.UTF_8.name());
 
+        String numberString = req.getParameter("number");
+        int number = !numberString.isBlank() ? Integer.parseInt(numberString) : 0;
+
         try (PrintWriter writer = resp.getWriter()) {
             writer.write("<h1>" + demoService.createHelloWorld() + "</h1>");
             System.out.println("This line must be code smell!");
