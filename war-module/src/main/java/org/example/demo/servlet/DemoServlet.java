@@ -15,15 +15,25 @@ public class DemoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.setContentType("text/html");
-        resp.setCharacterEncoding(StandardCharsets.UTF_8.name());
+        System.out.println("Vasiliy");
 
-        String numberString = req.getParameter("number");
-        int number = !numberString.isBlank() ? Integer.parseInt(numberString) : 0;
+        if (req != null && resp != null) {
+            resp.setContentType("text/html");
+            resp.setCharacterEncoding(StandardCharsets.UTF_8.name());
 
-        try (PrintWriter writer = resp.getWriter()) {
-            writer.write("<h1>" + demoService.createHelloWorld() + "</h1>");
-            System.out.println("This line must be code smell!");
+            String numberString = req.getParameter("number");
+            int number = !numberString.isBlank() ? Integer.parseInt(numberString) : 0;
+
+            try (PrintWriter writer = resp.getWriter()) {
+                writer.write("<h1>" + demoService.createHelloWorld() + "</h1>");
+                System.out.println("This line must be code smell!");
+            }
         }
+    }
+
+    public String checkIntegrationTests() {
+        System.out.println("Start method");
+
+        return demoService.createHelloWorld();
     }
 }
